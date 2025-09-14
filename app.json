@@ -28,7 +28,17 @@
       "favicon": "./assets/images/final_quest_240x240.png",
       "bundler": "metro",
       "output": "static",
-      "lang": "fa-IR"
+      "lang": "fa-IR",
+      "name": "مشاور املاک رجایی",
+      "shortName": "املاک رجایی",
+      "description": "مشاور املاک رجایی در اردبیل - خرید، فروش و اجاره آپارتمان و ملک",
+      "themeColor": "#2E7D32",
+      "backgroundColor": "#ffffff",
+      "startUrl": "/",
+      "display": "standalone",
+      "orientation": "portrait",
+      "dir": "rtl",
+      "crossorigin": "use-credentials"
     },
     "plugins": [
       "expo-router",

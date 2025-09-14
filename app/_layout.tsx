@@ -1,6 +1,6 @@
 import { Stack, useGlobalSearchParams } from 'expo-router';
 import { SafeAreaProvider, useSafeAreaInsets, SafeAreaView } from 'react-native-safe-area-context';
-import { Platform } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 import { useEffect, useState } from 'react';
 import { setupErrorLogging } from '../utils/errorLogger';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -47,10 +47,12 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
         <GestureHandlerRootView style={{ flex: 1 }}>
+          {Platform.OS !== 'web' && <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />}
           <Stack
             screenOptions={{
               headerShown: false,
-              animation: 'default',
+              animation: Platform.OS === 'web' ? 'none' : 'default',
+              contentStyle: { backgroundColor: '#FFFFFF' },
             }}
           />
         </GestureHandlerRootView>
